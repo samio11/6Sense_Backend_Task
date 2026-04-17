@@ -1,0 +1,186 @@
+{
+  "info": {
+    "_postman_id": "8ae7f63a-67d4-4f0f-aa7d-a0a69558f499",
+    "name": "6Sense_Backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39758820",
+    "_collection_link": "https://go.postman.co/collection/39758820-8ae7f63a-67d4-4f0f-aa7d-a0a69558f499?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Category",
+      "item": [
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Electronics\",\r\n  \"description\": \"All electronic items\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BACKEND}}/category/create",
+              "host": [
+                "{{BACKEND}}"
+              ],
+              "path": [
+                "category",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Category",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{BACKEND}}/category",
+              "host": [
+                "{{BACKEND}}"
+              ],
+              "path": [
+                "category"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Product",
+      "item": [
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Alpha Sorter\",\r\n  \"description\": \"A smart sorting device\",\r\n  \"price\": 1200,\r\n  \"discount\": 10,\r\n  \"image\": \"https://image.made-in-china.com/2f0j00shOglImPLMpq/Ceramic-Electric-Cooker-New-Model-2-Zone-Combi-Hob-160-Metal-Housing-160-.webp\",\r\n  \"status\": \"In Stock\",\r\n  \"category\": \"69e273246fb8e4938c6e0fb4\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BACKEND}}/product/create",
+              "host": [
+                "{{BACKEND}}"
+              ],
+              "path": [
+                "product",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Product",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Electronics\",\r\n  \"description\": \"All electronic items\"\r\n}"
+            },
+            "url": {
+              "raw": "{{BACKEND}}/product?searchTerm=laz",
+              "host": [
+                "{{BACKEND}}"
+              ],
+              "path": [
+                "product"
+              ],
+              "query": [
+                {
+                  "key": "searchTerm",
+                  "value": "laz"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"discount\": 15\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BACKEND}}/product/69e281287148a63b45b88170",
+              "host": [
+                "{{BACKEND}}"
+              ],
+              "path": [
+                "product",
+                "69e281287148a63b45b88170"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "BACKEND",
+      "value": ""
+    }
+  ]
+}
