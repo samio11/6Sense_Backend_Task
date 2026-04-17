@@ -2,14 +2,7 @@
 
 <br/>
 
-```
-  ██████╗    ███████╗███████╗███╗   ██╗███████╗███████╗
- ██╔════╝    ██╔════╝██╔════╝████╗  ██║██╔════╝██╔════╝
- ███████╗    ███████╗█████╗  ██╔██╗ ██║███████╗█████╗  
- ██╔═══██╗   ╚════██║██╔══╝  ██║╚██╗██║╚════██║██╔══╝  
- ╚██████╔╝   ███████║███████╗██║ ╚████║███████║███████╗
-  ╚═════╝    ╚══════╝╚══════╝╚═╝  ╚═══╝╚══════╝╚══════╝
-```
+
 
 # 🛍️ Product Management System
 
@@ -55,12 +48,13 @@ Key highlights at a glance:
 
 - 🔐 **Type-safe** end-to-end with TypeScript interfaces, Mongoose schemas, and Zod validation
 - 🧮 **Auto-generated product codes** using a custom cryptographic + algorithmic approach
-- 📦 **Image hosting** via Cloudinary integration (Multer + multer-storage-cloudinary)
 - 🔎 **Advanced QueryBuilder** for search, filter, sort, paginate & field selection
 - 🌐 **Deployed to Vercel** with zero-config routing via `vercel.json`
 - 🛡️ **Centralized error handling** for Zod, Mongoose, duplicate key & cast errors
 
 ---
+
+
 
 ## 🏗️ Architecture
 
@@ -220,10 +214,6 @@ NODE_ENV=development           # "development" | "production"
 # MongoDB Atlas
 DATABASE=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<dbname>?appName=<AppName>
 
-# Cloudinary (for image uploads)
-CLUDINARY_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
 ```
 
 | Variable | Required | Description |
@@ -231,9 +221,7 @@ CLOUDINARY_API_SECRET=your_api_secret
 | `PORT` | ✅ | Port the HTTP server listens on |
 | `NODE_ENV` | ✅ | Sets error stack trace visibility in responses |
 | `DATABASE` | ✅ | MongoDB connection string |
-| `CLUDINARY_NAME` | ✅ | Cloudinary cloud name |
-| `CLOUDINARY_API_KEY` | ✅ | Cloudinary API key |
-| `CLOUDINARY_API_SECRET` | ✅ | Cloudinary API secret |
+
 
 > ⚠️ **Never commit your `.env` file.** It is already included in `.gitignore`.
 
@@ -565,7 +553,7 @@ A complete Postman collection is included: **`6Sense_Backend.postman_collection.
 
 <br/>
 
-Made with ❤️ by **6Sense Backend Team**
+Made with ❤️ by **Samio Hasan**
 
 [![TypeScript](https://img.shields.io/badge/Built%20with-TypeScript-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![MongoDB](https://img.shields.io/badge/Powered%20by-MongoDB-47A248?style=flat-square&logo=mongodb)](https://www.mongodb.com)
