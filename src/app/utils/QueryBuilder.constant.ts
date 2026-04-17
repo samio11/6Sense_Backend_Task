@@ -4,4 +4,5 @@ export const excludingFields = [
   "limit",
   "skip",
   "fields",
+  "page"
 ];
