@@ -4,7 +4,7 @@
 
 
 
-# 🛍️ Product Management System
+# Product Management System
 
 **A robust, production-ready REST API for managing products and categories**
 
@@ -13,7 +13,7 @@
 [![Express](https://img.shields.io/badge/Express-5.x-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com)
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
-[![Cloudinary](https://img.shields.io/badge/Cloudinary-Image%20Hosting-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)](https://cloudinary.com)
+
 
 <br/>
 
@@ -21,42 +21,43 @@
 
 ---
 
-## 📖 Table of Contents
+##  Table of Contents
 
-- [✨ Overview](#-overview)
-- [🏗️ Architecture](#️-architecture)
-- [🚀 Tech Stack](#-tech-stack)
-- [📁 Project Structure](#-project-structure)
-- [⚙️ Getting Started](#️-getting-started)
-- [🌍 Environment Variables](#-environment-variables)
-- [📡 API Reference](#-api-reference)
+- [ Overview](#-overview)
+- [ Architecture](#️-architecture)
+- [ Tech Stack](#-tech-stack)
+- [ Project Structure](#-project-structure)
+- [ Getting Started](#️-getting-started)
+- [ Environment Variables](#-environment-variables)
+- [ API Reference](#-api-reference)
   - [Category Endpoints](#category-endpoints)
   - [Product Endpoints](#product-endpoints)
-- [🧠 Core Features](#-core-features)
-- [🛡️ Error Handling](#️-error-handling)
-- [🔍 Query Capabilities](#-query-capabilities)
-- [☁️ Deployment](#️-deployment)
-- [📬 Postman Collection](#-postman-collection)
+- [ Core Features](#-core-features)
+- [ Error Handling](#️-error-handling)
+- [ Query Capabilities](#-query-capabilities)
+- [ Deployment](#️-deployment)
+- [ Postman Collection](#-postman-collection)
 
 ---
 
-## ✨ Overview
+##  Overview
 
-The **6Sense Product Management System** is a clean, scalable backend REST API built with **TypeScript** and **Express.js**. It provides a complete solution for managing an e-commerce product catalog — including categories, product codes, image hosting, and advanced querying — all connected to a cloud-hosted **MongoDB Atlas** database.
+The **6Sense - Product Management System** is a clean, scalable backend REST API built with **TypeScript** and **Express.js**. It provides a complete solution for managing an e-commerce product catalog — including categories, product codes, image hosting, and advanced querying — all connected to a cloud-hosted **MongoDB Atlas** database.
 
 Key highlights at a glance:
 
-- 🔐 **Type-safe** end-to-end with TypeScript interfaces, Mongoose schemas, and Zod validation
-- 🧮 **Auto-generated product codes** using a custom cryptographic + algorithmic approach
-- 🔎 **Advanced QueryBuilder** for search, filter, sort, paginate & field selection
-- 🌐 **Deployed to Vercel** with zero-config routing via `vercel.json`
-- 🛡️ **Centralized error handling** for Zod, Mongoose, duplicate key & cast errors
+-  **Type-safe** end-to-end with TypeScript interfaces, Mongoose schemas, and Zod validation
+-  **Auto-generated product codes** using a custom cryptographic + algorithmic approach
+-  **Advanced QueryBuilder** for search, filter, sort, paginate & field selection
+-  **Deployed to Vercel** with zero-config routing via `vercel.json`
+-  **Centralized error handling** for Zod, Mongoose, duplicate key & cast errors
 
 ---
 
+<img width="481" height="361" alt="6senseTask drawio" src="https://github.com/user-attachments/assets/1d0ad1ff-8529-44d1-adfb-47b205bfb3f7" />
 
 
-## 🏗️ Architecture
+##  Architecture
 
 The application follows a **modular MVC-style architecture**, keeping concerns cleanly separated:
 
@@ -75,7 +76,7 @@ Each domain (`category`, `product`) owns its:
 
 ---
 
-## 🚀 Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -84,25 +85,24 @@ Each domain (`category`, `product`) owns its:
 | **Framework** | Express.js v5 |
 | **Database** | MongoDB Atlas via Mongoose v9 |
 | **Validation** | Zod 3.5 |
-| **Image Storage** | Cloudinary + Multer |
 | **Config** | dotenv |
 | **Dev Server** | ts-node-dev (hot reload) |
 | **Deployment** | Vercel (Serverless) |
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 6Sense_Product_Managment/
 │
 ├── src/
-│   ├── server.ts                    # 🚀 Entry point — DB connect + HTTP server
-│   ├── app.ts                       # 🔧 Express app setup, middleware, routes
+│   ├── server.ts                    #  Entry point — DB connect + HTTP server
+│   ├── app.ts                       #  Express app setup, middleware, routes
 │   │
 │   └── app/
 │       ├── config/
-│       │   └── index.ts             # ⚙️  Centralised env config (dotenv)
+│       │   └── index.ts             #   Centralised env config (dotenv)
 │       │
 │       ├── modules/
 │       │   ├── category/
@@ -118,10 +118,10 @@ Each domain (`category`, `product`) owns its:
 │       │       ├── product.services.ts     # Business logic + price calculation
 │       │       ├── product.controller.ts   # HTTP handlers
 │       │       ├── product.routes.ts       # Express router
-│       │       └── product.utils.ts        # 🧮 Product code generator
+│       │       └── product.utils.ts        # Product code generator
 │       │
 │       ├── middlewares/
-│       │   ├── globalErrorHandler.ts  # 🛡️  Centralised error handler
+│       │   ├── globalErrorHandler.ts  # Centralised error handler
 │       │   ├── notFound.ts            # 404 handler
 │       │   └── validateRequest.ts     # Zod schema validation middleware
 │       │
@@ -144,18 +144,18 @@ Each domain (`category`, `product`) owns its:
 │       └── types/
 │           └── error.ts               # Shared error type definitions
 │
-├── dist/                             # ⚙️  Compiled JS output (gitignored)
-├── .env                              # 🔒 Environment variables (gitignored)
+├── dist/                             # Compiled JS output (gitignored)
+├── .env                              # Environment variables (gitignored)
 ├── .gitignore
 ├── package.json
 ├── tsconfig.json
-├── vercel.json                       # ☁️  Vercel serverless config
-└── 6Sense_Backend.postman_collection.json  # 📬 Postman collection
+├── vercel.json                       # Vercel serverless config
+└── 6Sense_Backend.postman_collection.json  # Postman collection
 ```
 
 ---
 
-## ⚙️ Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -202,7 +202,7 @@ The server will start at **`http://localhost:5000`** with hot-reload enabled.
 
 ---
 
-## 🌍 Environment Variables
+## Environment Variables
 
 Create a `.env` file in the project root with the following variables:
 
@@ -227,7 +227,7 @@ DATABASE=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<dbname>?appN
 
 ---
 
-## 📡 API Reference
+##  API Reference
 
 All endpoints are prefixed with **`/api/v1`**.
 
@@ -271,11 +271,11 @@ Content-Type: application/json
 }
 ```
 
-> 🔒 Returns `400 Bad Request` if a category with the same name already exists.
+>  Returns `400 Bad Request` if a category with the same name already exists.
 
 ---
 
-#### 📋 Get All Categories
+####  Get All Categories
 
 ```http
 GET /api/v1/category
@@ -287,7 +287,7 @@ GET /api/v1/category
 
 ### Product Endpoints
 
-#### ➕ Create Product
+####  Create Product
 
 ```http
 POST /api/v1/product/create
@@ -334,11 +334,11 @@ Content-Type: application/json
 }
 ```
 
-> 🧮 A unique `productCode` is **auto-generated** from the product name using a cryptographic MD5 prefix + longest-increasing-subsequence algorithm. No manual input needed.
+>  A unique `productCode` is **auto-generated** from the product name using a cryptographic MD5 prefix + longest-increasing-subsequence algorithm. No manual input needed.
 
 ---
 
-#### 📋 Get All Products
+####  Get All Products
 
 ```http
 GET /api/v1/product
@@ -384,7 +384,7 @@ Supports full query capabilities:
 
 ---
 
-#### ✏️ Update Product
+####  Update Product
 
 ```http
 PATCH /api/v1/product/:id
@@ -412,9 +412,9 @@ Only the following fields are updatable for data integrity:
 
 ---
 
-## 🧠 Core Features
+##  Core Features
 
-### 🔐 Auto-Generated Product Codes
+###  Auto-Generated Product Codes
 
 Every product gets a deterministic, unique code on creation via `product.utils.ts`:
 
@@ -431,7 +431,7 @@ productCode = "<MD5-hash-prefix(7 chars)>-<startIdx><longest-increasing-substrin
 
 ---
 
-### 🔍 Advanced QueryBuilder
+###  Advanced QueryBuilder
 
 The `QueryBuilder<T>` class provides a **fluent, chainable API** for building complex Mongoose queries:
 
@@ -450,7 +450,7 @@ Reserved query parameters excluded from field filtering: `searchTerm`, `sort`, `
 
 ---
 
-### 💰 Real-Time Price Calculation
+###  Real-Time Price Calculation
 
 When fetching products, the API automatically computes the **final price** accounting for the discount:
 
@@ -470,7 +470,7 @@ This is returned in a structured `pricing` object so frontends never need to cal
 
 ---
 
-## 🛡️ Error Handling
+##  Error Handling
 
 All errors are caught by the **global error handler middleware** and returned in a consistent shape:
 
@@ -525,7 +525,7 @@ The `vercel.json` configuration routes all incoming requests to `src/server.ts`:
 
 ---
 
-## 📬 Postman Collection
+##  Postman Collection
 
 A complete Postman collection is included: **`6Sense_Backend.postman_collection.json`**
 
@@ -553,7 +553,7 @@ A complete Postman collection is included: **`6Sense_Backend.postman_collection.
 
 <br/>
 
-Made with ❤️ by **Samio Hasan**
+Made with by **Samio Hasan**
 
 [![TypeScript](https://img.shields.io/badge/Built%20with-TypeScript-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![MongoDB](https://img.shields.io/badge/Powered%20by-MongoDB-47A248?style=flat-square&logo=mongodb)](https://www.mongodb.com)
