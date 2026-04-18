@@ -135,13 +135,18 @@ cd 6sense-product-management
 npm install
 ```
 
-### 3. Configure Environment Variables
+## Environment Variables
 
-Create a `.env` file in the project root (see [Environment Variables](#-environment-variables)):
+Create a `.env` file in the project root with the following variables:
 
-```bash
-cp .env.example .env
-# Then fill in your actual values
+```env
+# Server
+PORT=5000
+NODE_ENV=development           # "development" | "production"
+
+# MongoDB Atlas
+DATABASE=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<dbname>?appName=<AppName>
+
 ```
 
 ### 4. Start Development Server
